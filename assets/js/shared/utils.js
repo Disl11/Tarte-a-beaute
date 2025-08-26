@@ -1,6 +1,7 @@
 // helpers communs (DOM, formatage, URL id)
 // sélection DOM, format prix, lecture id d'URL
 import { getNumberOfProductsInCart } from "./domain.js";
+import { getCart } from "./state.js";
 
 export const clearInputValue = (input) => (input.value = "");
 
@@ -23,4 +24,26 @@ export const refreshCartTooltip = function () {
       document.querySelector(".cart-tooltip").remove();
     }
   }
+};
+
+export const wipeMain = function () {
+  const main = document.querySelector("main");
+  main.innerHTML = "";
+};
+
+export const handleEmptyCart = function () {
+  wipeMain();
+  const cartEmptyTitle = document.createElement("h2");
+  cartEmptyTitle.classList.add("emptyCart");
+  cartEmptyTitle.textContent = "Votre panier est vide!";
+
+  const cartEmptyBtn = document.createElement("button");
+  cartEmptyBtn.classList.add("emptyCart");
+  cartEmptyBtn.textContent = "Retourner à la liste de produits";
+  cartEmptyBtn.addEventListener(
+    "click",
+    () => (window.location.href = "./index.html")
+  );
+
+  document.querySelector("main").append(cartEmptyTitle, cartEmptyBtn);
 };

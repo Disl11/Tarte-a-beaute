@@ -1,8 +1,10 @@
 // logique panier (add/update/remove/total)
 // règles panier (bornage au stock, total)
 import { getProduct } from "./api.js";
-import { getCart, saveCart } from "./state.js";
+import { getCart, getOrders, saveCart, saveOrders } from "./state.js";
 import { refreshCartTooltip } from "./utils.js";
+
+// Cart
 
 export const addProductToCart = async function (
   productId,
@@ -42,7 +44,6 @@ export const removeProductFromCart = async function (productId) {
   }
 };
 
-
 export const updateProductStockInCart = async function (productId, newStock) {
   const product = await getProduct(productId);
 
@@ -66,3 +67,45 @@ export const getNumberOfProductsInCart = () => getCart().length;
 
 export const isProductInCart = (productId) =>
   getCart().find((product) => product.product.id === productId);
+
+export const getTotalCartPrice = () =>
+  parseFloat(
+    getCart()
+      .reduce(
+        (acc, product) => (acc += product.product.price * product.numberInCart),
+        0
+      )
+      .toFixed(2),
+    10
+  );
+
+export const checkIfCartIsEmpty = function () {
+  return getCart().length === 0;
+};
+
+// Orders
+
+export const addOrder = function (order) {
+  const orders = getOrders();
+  orders.push(order);
+  saveOrders(orders);
+  saveCart([]);
+  refreshCartTooltip();
+};
+
+export const checkIfOrderNumberExist = function (orderId) {
+  const ordersFromCart = getOrders();
+  return ordersFromCart.find(
+    (orderFromCart) => orderFromCart.orderId === orderId
+  )
+    ? true
+    : false;
+};
+
+export const getRandomOrderId = function () {
+  let orderId;
+  do {
+    orderId = Math.round(Math.random() * 10000000000000000);
+  } while (checkIfOrderNumberExist(orderId));
+  return orderId;
+};
