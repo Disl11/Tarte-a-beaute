@@ -1,7 +1,6 @@
 // helpers communs (DOM, formatage, URL id)
 // sélection DOM, format prix, lecture id d'URL
 import { getNumberOfProductsInCart } from "./domain.js";
-import { getCart } from "./state.js";
 
 export const clearInputValue = (input) => (input.value = "");
 

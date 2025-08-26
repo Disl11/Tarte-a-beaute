@@ -26,7 +26,7 @@ function displayProduct(produit) {
     imgPanier.addEventListener(
       "click",
       () =>
-        (window.location.href = `./product.html?id=${produit[i].product.id}`)
+        (window.location.href = "./product.html?id=" + produit[i].product.id)
     );
 
     const infoProduct = document.createElement("div");
