@@ -9,6 +9,7 @@ const areaProduct = document.querySelector("#area-product");
 function displayProduct(produit) {
   areaProduct.innerHTML = "";
 
+  // boucle pour afficher les article
   for (let i = 0; i < produit.length; i++) {
     const containerProduct = document.createElement("article");
     containerProduct.classList.add("containerProduct");
@@ -18,6 +19,7 @@ function displayProduct(produit) {
     imgPanier.src = produit[i].product.image_link;
     imgPanier.alt = "image du produit";
     imgPanier.classList.add("imgPanier");
+    imgPanier.addEventListener("click", () => (window.location.href = `./product.html?id=${produit[i].product.id}`));
 
     const infoProduct = document.createElement("div");
     infoProduct.classList.add("info-product");
@@ -64,7 +66,7 @@ function displayProduct(produit) {
     btnMore.addEventListener("click", () => {
       let valeur = parseInt(input.value);
       if (valeur < input.max) {
-        valeur ++;
+        valeur++;
         input.value = valeur;
       }
       updateItemPrice(produit, i, price, input);
@@ -77,7 +79,7 @@ function displayProduct(produit) {
     btnLess.addEventListener("click", () => {
       let valeur = parseInt(input.value);
       if (valeur > input.min) {
-        valeur --;
+        valeur--;
         input.value = valeur;
       }
       updateItemPrice(produit, i, price, input);
@@ -93,10 +95,6 @@ function displayProduct(produit) {
     input.addEventListener("input", () => {
       updateItemPrice();
     });
-
-
-    // updateProductStockInCart(produit[i].numberInCart);
-    // console.log(produit[i].numberInCart);
 
     const btnTrash = document.createElement("button");
     btnTrash.classList.add("btn-trash");
@@ -133,9 +131,9 @@ function displayProduct(produit) {
 
   document.getElementById("frais-livraison").textContent =
     fraisLivraison + " €";
-  document.getElementById("price-produit").textContent = totalPanier + " €";
+  document.getElementById("price-produit").textContent = (totalPanier).toFixed(2) + " €";
   document.getElementById("total-price").textContent =
-    totalPanier + fraisLivraison + " €";
+    (totalPanier + fraisLivraison).toFixed(2) + " €";
 }
 
 displayProduct(getCart());
@@ -170,7 +168,7 @@ function calculateDelivery(total) {
 }
 
 function updateItemPrice(produit, i, price, input) {
-  
+
   let checkStock = parseInt(input.value);
 
   if (checkStock > 10) {
