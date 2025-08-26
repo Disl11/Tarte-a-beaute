@@ -75,10 +75,11 @@ Main Features
 
 - JSON — Mock API for product data
 
----
+-----
 
  # Project Structure
 
+------
 
 /
 ├── assets/
@@ -112,6 +113,7 @@ Main Features
 ├── product.html                 #  productpage
 └── README.md                    # Project documentation
 
+------
 
 ## Methodology
 
