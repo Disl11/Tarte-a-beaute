@@ -84,34 +84,34 @@ Main Features
 /
 ├── assets/
 │   ├── css/
-│   │   └── style.css            # Main style file
+│   │   └── style.css           
 │   │
 │   ├── js/
 │   │   ├── shared/
-│   │   │   ├── api.js           # Loading products
-│   │   │   ├── state.js         # localStorage management
+│   │   │   ├── api.js           
+│   │   │   ├── state.js         
 │   │   │   ├── domain.js
-│   │   │   └── utils.js         # Utility functions
+│   │   │   └── utils.js         
 │   │   │
 │   │   └── pages/
-│   │       ├── index.js         # JS for the homepage
-│   │       ├── product.js       # JS for the productpage
-│   │       ├── cart.js          # JS for the cartpage
-│   │       └── checkout.js      # JS the checkoutpage
+│   │       ├── index.js         
+│   │       ├── product.js       
+│   │       ├── cart.js          
+│   │       └── checkout.js      
 │   │
-│   ├── images/                  # logo
+│   ├── images/                  
 │   └── fonts/
 │
 ├── data/
-│   └── products.json            # Simulated product data
+│   └── products.json            
 │
-├── docs/                        # Mockups, zoning and wireframe
+├── docs/                        
 │
-├── cart.html                    # cartpage
-├── checkout.html                # checkoutpage
-├── index.html                   # homepage
-├── product.html                 #  productpage
-└── README.md                    # Project documentation
+├── cart.html                    
+├── checkout.html                
+├── index.html                  
+├── product.html                
+└── README.md                    
 
 ------
 
