@@ -2,7 +2,8 @@
 
 ## Tarte à Beauté — Mini E-Commerce Shop
 
-Front-end web development project for a mini cosmetics shop, using HTML, CSS, and Vanilla JavaScript.
+Front
+-end web development project for a mini cosmetics shop, using HTML, CSS, and Vanilla JavaScript.
 
 ---
 
