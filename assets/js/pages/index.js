@@ -74,7 +74,7 @@ function generateProductArticle(product) {
   addToCartBtn.addEventListener("click", () => {
     addProductToCart(product.id, true, true);
     addToCartBtn.disabled = true;
-    btn1.textContent = "Ajouté";
+    addToCartBtn.textContent = "Ajouté";
   });
 
   document.querySelector("main .products").appendChild(template);
