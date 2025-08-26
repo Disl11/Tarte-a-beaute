@@ -90,6 +90,7 @@ button:disabled {
   margin: 20px;
   cursor: pointer;
   position: relative;
+
   .cart-tooltip {
     position: absolute;
     top: -25px;
@@ -434,6 +435,7 @@ main.index {
   align-items: center;
   width: 100%;
   gap: 12px;
+
 }
 
 .btnMore,
@@ -445,6 +447,7 @@ main.index {
   border-radius: 30px;
   cursor: pointer;
 }
+
 
 .price {
   display: flex;
