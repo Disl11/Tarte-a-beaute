@@ -18,7 +18,6 @@ import {
 if (!checkIfCartIsEmpty()) {
   refreshCartTooltip();
   manageRequiredFields();
-  console.log(await checkIfCartProductsAreInStock());
 
   const totalCartPrice = getTotalCartPrice();
   const isDelyveryFree = totalCartPrice > 50 ? true : false;
