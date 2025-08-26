@@ -76,7 +76,7 @@ Main Features
 
 ---
 
- *Project Structure*
+ # Project Structure
 
 
 /
