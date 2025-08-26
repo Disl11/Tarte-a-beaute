@@ -123,6 +123,45 @@ Task management using Trello (Backlog → To Do → In Progress → Done)
 
 Git workflow: main branch, dev branch, and one branch per featurefeature
 
+
+# *Chargement du produit*
+
+L'identifiant du produit est récupéré depuis l'URL.
+Les données du produit (nom, prix, stock, image, note…) sont chargées via une fonction externe.
+Ces données sont ensuite utilisées pour construire l'affichage.
+
+# *Création de la structure HTML*
+
+Tous les éléments (image, nom, prix, stock, note, boutons) sont générés en JavaScript.
+Une structure en <main> et <div class="container"> est créée dynamiquement.
+
+# *Affichage des informations*
+
+Le nom, le prix, le stock disponible, et la note du produit sont affichés clairement.
+Une image par défaut s'affiche si le lien de l'image est cassé.
+
+# *Gestion des boutons*
+
+Deux boutons sont affichés :
+
+Ajouter au panier : désactivé si le produit est en rupture ou déjà ajouté.
+Continuer vos achats : redirige vers la page d’accueil.
+Un clic sur "Ajouter" enregistre le produit dans le panier et désactive le bouton.
+
+# *Accessibilité et retours utilisateur*
+
+Texte alternatif sur les images (alt)
+Message d’alerte lors de la redirection
+Mise à jour de l’icône panier après ajout
+
+# *Utilisation de modules partagés*
+
+Le script utilise d'autres fichiers pour :
+
+Charger les produits (api.js)
+Gérer l'état du panier (domain.js, state.js)
+Obtenir l’ID depuis l’URL (utils.js)
+
 ---
 
 ## *Homepage Preview*
