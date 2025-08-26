@@ -17,9 +17,17 @@ function displayProduct(produit) {
 
     const imgPanier = document.createElement("img");
     imgPanier.src = produit[i].product.image_link;
+    imgPanier.onerror = function () {
+      this.onerror = null;
+      this.src = "./assets/images/noproductpic.png";
+    };
     imgPanier.alt = "image du produit";
     imgPanier.classList.add("imgPanier");
-    imgPanier.addEventListener("click", () => (window.location.href = `./product.html?id=${produit[i].product.id}`));
+    imgPanier.addEventListener(
+      "click",
+      () =>
+        (window.location.href = `./product.html?id=${produit[i].product.id}`)
+    );
 
     const infoProduct = document.createElement("div");
     infoProduct.classList.add("info-product");
@@ -53,7 +61,7 @@ function displayProduct(produit) {
     const it = document.createElement("div");
     it.classList.add("input-and-trash");
 
-    const divTrash = document.createElement("div")
+    const divTrash = document.createElement("div");
     divTrash.classList.add("divTrash");
 
     const label = document.createElement("label");
@@ -61,7 +69,7 @@ function displayProduct(produit) {
 
     const btnMore = document.createElement("button");
     btnMore.classList.add("btnMore");
-    btnMore.textContent = "+"
+    btnMore.textContent = "+";
 
     btnMore.addEventListener("click", () => {
       let valeur = parseInt(input.value);
@@ -74,7 +82,7 @@ function displayProduct(produit) {
 
     const btnLess = document.createElement("button");
     btnLess.classList.add("btnLess");
-    btnLess.textContent = "-"
+    btnLess.textContent = "-";
 
     btnLess.addEventListener("click", () => {
       let valeur = parseInt(input.value);
@@ -90,7 +98,8 @@ function displayProduct(produit) {
     input.name = "quantite";
     input.classList.add("btnQuantite");
     input.min = "1";
-    input.max = produit[i].product.stock < "11" ? produit[i].product.stock : "11";
+    input.max =
+      produit[i].product.stock < "11" ? produit[i].product.stock : "11";
     input.value = "1";
     input.addEventListener("input", () => {
       updateItemPrice();
@@ -131,7 +140,8 @@ function displayProduct(produit) {
 
   document.getElementById("frais-livraison").textContent =
     fraisLivraison + " €";
-  document.getElementById("price-produit").textContent = (totalPanier).toFixed(2) + " €";
+  document.getElementById("price-produit").textContent =
+    totalPanier.toFixed(2) + " €";
   document.getElementById("total-price").textContent =
     (totalPanier + fraisLivraison).toFixed(2) + " €";
 }
@@ -168,7 +178,6 @@ function calculateDelivery(total) {
 }
 
 function updateItemPrice(produit, i, price, input) {
-
   let checkStock = parseInt(input.value);
 
   if (checkStock > 10) {
