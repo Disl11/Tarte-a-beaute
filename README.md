@@ -79,37 +79,37 @@ Main Features
 ##  *Project Structure*
 
 
-#/
-#├── assets/
-#│   ├── css/
-#│   │   └── style.css            # Main style file
-#│   │
-#│   ├── js/
-#│   │   ├── shared/
-#│   │   │   ├── api.js           # Loading products
-#│   │   │   ├── state.js         # localStorage management
-#│   │   │   ├── domain.js
-#│   │   │   └── utils.js         # Utility functions
-#│   │   │
-#│   │   └── pages/
-#│   │       ├── index.js         # JS for the homepage
-#│   │       ├── product.js       # JS for the productpage
-#│   │       ├── cart.js          # JS for the cartpage
-#│   │       └── checkout.js      # JS the checkoutpage
-#│   │
-#│   ├── images/                  # logo
-#│   └── fonts/
-#│
-#├── data/
-#│   └── products.json            # Simulated product data
-#│
-#├── docs/                        # Mockups, zoning and wireframe
-#│
-#├── cart.html                    # cartpage
-#├── checkout.html                # checkoutpage
-#├── index.html                   # homepage
-#├── product.html                 #  productpage
-#└── README.md                    # Project documentation
+/
+├── assets/
+│   ├── css/
+│   │   └── style.css            # Main style file
+│   │
+│   ├── js/
+│   │   ├── shared/
+│   │   │   ├── api.js           # Loading products
+│   │   │   ├── state.js         # localStorage management
+│   │   │   ├── domain.js
+│   │   │   └── utils.js         # Utility functions
+│   │   │
+│   │   └── pages/
+│   │       ├── index.js         # JS for the homepage
+│   │       ├── product.js       # JS for the productpage
+│   │       ├── cart.js          # JS for the cartpage
+│   │       └── checkout.js      # JS the checkoutpage
+│   │
+│   ├── images/                  # logo
+│   └── fonts/
+│
+├── data/
+│   └── products.json            # Simulated product data
+│
+├── docs/                        # Mockups, zoning and wireframe
+│
+├── cart.html                    # cartpage
+├── checkout.html                # checkoutpage
+├── index.html                   # homepage
+├── product.html                 #  productpage
+└── README.md                    # Project documentation
 
 
 ## Methodology
