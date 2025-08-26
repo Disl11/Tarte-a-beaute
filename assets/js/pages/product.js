@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   btn1.addEventListener("click", function () {
     addProductToCart(product.id, true, true);
     btn1.disabled = true;
+    btn1.textContent = "Ajouté";
   });
 
   // Quand on clique sur le bouton "continue with purchase"
