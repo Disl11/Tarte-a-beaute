@@ -4,6 +4,7 @@
 import {
   addOrder,
   checkIfCartIsEmpty,
+  checkIfCartProductsAreInStock,
   getRandomOrderId,
   getTotalCartPrice,
 } from "../shared/domain.js";
@@ -17,6 +18,7 @@ import {
 if (!checkIfCartIsEmpty()) {
   refreshCartTooltip();
   manageRequiredFields();
+  console.log(await checkIfCartProductsAreInStock());
 
   const totalCartPrice = getTotalCartPrice();
   const isDelyveryFree = totalCartPrice > 50 ? true : false;
@@ -58,21 +60,26 @@ if (!checkIfCartIsEmpty()) {
     manageRequiredFields();
   });
 
-  paymentForm.addEventListener("submit", (e) => {
+  paymentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = new FormData(paymentForm);
     paymentFormData = Object.fromEntries(data);
     if (validateExpiryDate(paymentFormData["expiration-date"])) {
-      const order = {
-        coordinates: coordinatesFormData,
-        paymentInfo: paymentFormData,
-        pricePaid: totalCartPrice > 50 ? totalCartPrice : totalCartPrice + 3.5,
-        products: getCart(),
-        orderId: getRandomOrderId(),
-        estimatedDeliveryDate: getDatePlusDays(3),
-      };
-      addOrder(order);
-      handleSucces(order);
+      if (await checkIfCartProductsAreInStock()) {
+        const order = {
+          coordinates: coordinatesFormData,
+          paymentInfo: paymentFormData,
+          pricePaid:
+            totalCartPrice > 50 ? totalCartPrice : totalCartPrice + 3.5,
+          products: getCart(),
+          orderId: getRandomOrderId(),
+          estimatedDeliveryDate: getDatePlusDays(3),
+        };
+        addOrder(order);
+        handleSucces(order);
+      } else {
+        alert("Un des produits n'est plus en stock");
+      }
     } else {
       alert("La date d'expiration est dépassée");
     }
