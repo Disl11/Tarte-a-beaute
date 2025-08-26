@@ -1,18 +1,23 @@
 /* amita-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Amita";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/amita-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/amita-v19-latin-regular.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* amita-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: "Amita";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/amita-v19-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/amita-v19-latin-700.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 :root {
@@ -148,6 +153,7 @@ body.index {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
   main {
     flex: 1;
   }
@@ -159,28 +165,33 @@ main.index {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+
   .filter {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem;
+
     .tags {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+
       button {
         background-color: var(--primary-color);
         padding: 0.5rem;
         border-radius: 1rem;
         border: none;
         cursor: pointer;
+
         &.selected {
           background-color: var(--quaternary-color);
         }
       }
     }
+
     .search-container {
       background-color: var(--primary-color);
       padding: 0.5rem;
@@ -188,15 +199,18 @@ main.index {
       position: relative;
       width: 91vw;
       height: fit-content;
+
       input {
         border: none;
         width: 100%;
         height: 100%;
         background: none;
+
         &::placeholder {
           color: #000;
         }
       }
+
       i {
         position: absolute;
         right: 1px;
@@ -209,11 +223,13 @@ main.index {
       }
     }
   }
+
   .products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 0.5rem;
     padding: 0 0.5rem 0.5rem 0.5rem;
+
     .product {
       display: flex;
       flex-direction: column;
@@ -221,11 +237,13 @@ main.index {
       border-radius: 1rem;
       border: 3px solid var(--primary-color);
       overflow: hidden;
+
       img {
         width: 100%;
         object-fit: cover;
         cursor: pointer;
       }
+
       .product-info {
         padding: 1rem;
         display: flex;
@@ -233,19 +251,23 @@ main.index {
         justify-content: space-between;
         height: 100%;
         gap: 1rem;
+
         .title-and-price {
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 0.5rem;
+
           h3 {
             font-size: 1.2rem;
             font-weight: 500;
           }
+
           p {
             font-size: 1rem;
           }
         }
+
         .stock-and-add {
           display: flex;
           justify-content: space-between;
@@ -265,9 +287,11 @@ main.index {
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
+
             &:hover {
               background-color: var(--quaternary-color);
             }
+
             &:disabled {
               background-color: #ccc;
               cursor: not-allowed;
@@ -277,6 +301,7 @@ main.index {
       }
     }
   }
+
   .page-select {
     display: flex;
     gap: 0.5rem;
@@ -290,8 +315,10 @@ main.index {
     .products {
       grid-template-columns: repeat(2, 1fr);
     }
+
     .filter {
       align-items: flex-start;
+
       .search-container {
         min-width: fit-content;
         width: fit-content;
@@ -315,6 +342,7 @@ main.index {
       justify-content: space-between;
       gap: 3rem;
     }
+
     .products {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -612,13 +640,15 @@ main.product-page {
 }
 
 .product-img {
-  width: 100%;
   /* Largeur maximale de l'image */
   border: 4px solid #c779ff73;
   /* Bordure violette autour de l'image */
   border-radius: 10px;
   /* Coins arrondis */
-  height: auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+
 }
 
 .Produit-info {
@@ -697,15 +727,14 @@ main.product-page {
     flex-direction: column;
     gap: 30px;
     background-color: var(--tertiary-color);
+    align-items: center;
   }
 
   .product-img {
     width: 100%;
-    border: 4px solid #c779ff73;
+    border: 1px solid #c779ff73;
     border-radius: 10px;
-    display: block;
-    max-width: 300px;
-    margin: 0 auto;
+
   }
 
   .Produit-info {
