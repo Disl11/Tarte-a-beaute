@@ -24,3 +24,25 @@ export const refreshCartTooltip = function () {
     }
   }
 };
+
+export const wipeMain = function () {
+  const main = document.querySelector("main");
+  main.innerHTML = "";
+};
+
+export const handleEmptyCart = function () {
+  wipeMain();
+  const cartEmptyTitle = document.createElement("h2");
+  cartEmptyTitle.classList.add("emptyCart");
+  cartEmptyTitle.textContent = "Votre panier est vide!";
+
+  const cartEmptyBtn = document.createElement("button");
+  cartEmptyBtn.classList.add("emptyCart");
+  cartEmptyBtn.textContent = "Retourner à la liste de produits";
+  cartEmptyBtn.addEventListener(
+    "click",
+    () => (window.location.href = "./index.html")
+  );
+
+  document.querySelector("main").append(cartEmptyTitle, cartEmptyBtn);
+};
