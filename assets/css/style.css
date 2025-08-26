@@ -789,3 +789,63 @@ main.product-page {
     font-size: 12px;
   }
 }
+
+
+
+/* =============== checkout Page ================= */
+
+.checkout-succes{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-succes{
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+ .succes{
+  background-color:  #fdecda ;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column ;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.title-succes{
+  margin: 10px;
+}
+
+#icone-succes{
+font-size: 40px;
+color: #e9cbff;
+background-color: #000;
+border-radius:20px ;
+margin: 25px;
+}
+
+.div-succes{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: 90%;
+
+  align-items: center;
+  gap: 25px;
+  font-size: 17px;
+}
+
+.btn-succes{
+  border: none;
+  background-color: #e9cbff;
+  height: 35px;
+  width: 250px;
+  font-size: 17px;
+  border-radius: 10px;
+}
