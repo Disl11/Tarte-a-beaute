@@ -124,43 +124,52 @@ Task management using Trello (Backlog → To Do → In Progress → Done)
 Git workflow: main branch, dev branch, and one branch per featurefeature
 
 
-# *Chargement du produit*
+## *Product Loading*
 
-L'identifiant du produit est récupéré depuis l'URL.
-Les données du produit (nom, prix, stock, image, note…) sont chargées via une fonction externe.
-Ces données sont ensuite utilisées pour construire l'affichage.
+* The product ID is retrieved from the URL.  
+* Product data (name, price, stock, image, rating, etc.) is loaded using an external function.  
+* This data is then used to build the product display.
 
-# *Création de la structure HTML*
+---
 
-Tous les éléments (image, nom, prix, stock, note, boutons) sont générés en JavaScript.
-Une structure en <main> et <div class="container"> est créée dynamiquement.
+## *HTML Structure Creation*
 
-# *Affichage des informations*
+* All elements (image, name, price, stock, rating, buttons) are generated with JavaScript.  
+* A structure using `<main>` and `<div class="container">` is created dynamically.
 
-Le nom, le prix, le stock disponible, et la note du produit sont affichés clairement.
-Une image par défaut s'affiche si le lien de l'image est cassé.
+---
 
-# *Gestion des boutons*
+## *Displaying Product Information*
 
-Deux boutons sont affichés :
+* The product’s name, price, available stock, and rating are clearly shown.  
+* A default image is displayed if the original image link is broken.
 
-Ajouter au panier : désactivé si le produit est en rupture ou déjà ajouté.
-Continuer vos achats : redirige vers la page d’accueil.
-Un clic sur "Ajouter" enregistre le produit dans le panier et désactive le bouton.
+---
 
-# *Accessibilité et retours utilisateur*
+## *Button Handling*
 
-Texte alternatif sur les images (alt)
-Message d’alerte lors de la redirection
-Mise à jour de l’icône panier après ajout
+* Two buttons are displayed:
+  * **Add to cart**: disabled if the product is out of stock or already in the cart.  
+  * **Continue shopping**: redirects to the homepage.
+* Clicking **Add to cart** stores the product in the cart and disables the button.
 
-# *Utilisation de modules partagés*
+---
 
-Le script utilise d'autres fichiers pour :
+## *Accessibility & User Feedback*
 
-Charger les produits (api.js)
-Gérer l'état du panier (domain.js, state.js)
-Obtenir l’ID depuis l’URL (utils.js)
+* Alt text for images  
+* Alert message during redirection  
+* Cart icon is updated after adding a product
+
+---
+
+## *Use of Shared Modules*
+
+* The script uses other files to:
+  * Load products (`api.js`)  
+  * Manage cart state (`domain.js`, `state.js`)  
+  * Get the product ID from the URL (`utils.js`)
+
 
 ---
 
