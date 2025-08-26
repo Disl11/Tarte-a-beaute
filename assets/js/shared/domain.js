@@ -83,6 +83,15 @@ export const checkIfCartIsEmpty = function () {
   return getCart().length === 0;
 };
 
+export const checkIfCartProductsAreInStock = async function () {
+  const cart = getCart();
+
+  return cart.reduce(async (acc, cartItem) => {
+    const curr = await getProduct(cartItem.product.id);
+    return curr.stock ? acc : false;
+  }, true);
+};
+
 // Orders
 
 export const addOrder = function (order) {
