@@ -170,38 +170,3 @@ Git workflow: main branch, dev branch, and one branch per featurefeature
   * Manage cart state (`domain.js`, `state.js`)  
   * Get the product ID from the URL (`utils.js`)
 
-
----
-
-## *Homepage Preview*
-
-![ Homepage ](assets/images/landing_page.PNG)
-![Homepage mobile-first](assets/images/landing_page_mobile.PNG)
-
----
-
-## *Product Preview*
-
-![Product page with products](assets/images/Product_page.PNG)
-![Product page mobile-first](assets/images/Product_page_mobile.PNG)
-
----
-
-## *Cart Preview*
-
-![Cart page with products](assets/images/cart_page.PNG)
-![Cart page mobile-first](assets/images/cart_page_mobile.PNG)
-
----
-
-## *Checkout Preview*
-
-![Checkout page](assets/images/checkout_page.PNG)
-![Checkout page mobile-first](assets/images/checkout_page_mobile.PNG)
-
----
-
-## *Checkout Success Preview*
-
-![Checkout success page](assets/images/checkout-succes.PNG)
-![Checkout success page mobile-first](assets/images/checkout-succes_mobile.PNG)
