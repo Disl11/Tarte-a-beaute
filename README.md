@@ -132,21 +132,21 @@ Git workflow: main branch, dev branch, and one branch per featurefeature
 
 ---
 
-## *HTML Structure Creation*
+*HTML Structure Creation*
 
 * All elements (image, name, price, stock, rating, buttons) are generated with JavaScript.  
 * A structure using `<main>` and `<div class="container">` is created dynamically.
 
 ---
 
-## *Displaying Product Information*
+*Displaying Product Information*
 
 * The product’s name, price, available stock, and rating are clearly shown.  
 * A default image is displayed if the original image link is broken.
 
 ---
 
-## *Button Handling*
+*Button Handling*
 
 * Two buttons are displayed:
   * **Add to cart**: disabled if the product is out of stock or already in the cart.  
@@ -155,7 +155,7 @@ Git workflow: main branch, dev branch, and one branch per featurefeature
 
 ---
 
-## *Accessibility & User Feedback*
+*Accessibility & User Feedback*
 
 * Alt text for images  
 * Alert message during redirection  
@@ -163,7 +163,7 @@ Git workflow: main branch, dev branch, and one branch per featurefeature
 
 ---
 
-## *Use of Shared Modules*
+*Use of Shared Modules*
 
 * The script uses other files to:
   * Load products (`api.js`)  
