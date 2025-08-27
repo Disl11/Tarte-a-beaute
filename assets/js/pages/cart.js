@@ -171,7 +171,7 @@ function calculateTotal(produit) {
 
 function calculateDelivery(total) {
   if (total <= 25) {
-    return 0;
+    return "Gratuit";
   } else {
     return 3.5;
   }
